@@ -1,0 +1,42 @@
+[project]
+    name = "formatters"
+    version = "1.0.0"
+    description = "Pipeline runner and sample formatters"
+    readme = "README.md"
+    requires-python = ">=3.14"
+    dependencies = [
+    ]
+    license-files = [
+        "./LICENSE.txt",
+    ]
+    classifiers = [
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.14",
+        "Intended Audience :: Developers",
+        "Topic :: Text Processing",
+    ]
+
+    [project.scripts]
+        formatters = "main:main"
+
+# Use setuptools to build the root console-script-only project.
+[build-system]
+    requires = [
+        "setuptools>=69",
+        "wheel",
+    ]
+    build-backend = "setuptools.build_meta"
+
+# Explicitly package only the top-level module `main.py`.
+[tool.setuptools]
+    py-modules = [
+        "main",
+    ]
+    packages = [
+    ]
+
+[tool.uv.workspace]
+    members = [
+        "FormattersBase",
+    ]
